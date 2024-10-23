@@ -2,6 +2,7 @@ import { defineConfig } from 'cypress'
 
 export default defineConfig({
   env: {
+    baseApiUrl: 'https://medicophysicians-f0d5b2gzdkeafdbc.westus-01.azurewebsites.net/',
     username: 'superadmin@mail.com',
     password: 'E"AQd@EfM~{D8p,Z',
 
@@ -21,11 +22,11 @@ export default defineConfig({
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
-
     testIsolation:false,
     baseUrl: 'https://medicophysicians-f0d5b2gzdkeafdbc.westus-01.azurewebsites.net/',
     specPattern: [
-      'cypress/e2e/login.ts',
+      'cypress/e2e/Administration/Company Info/add.ts',
+      'cypress/e2e/Administration/Location/add.ts'
     ]
     }
 })
