@@ -1,0 +1,11 @@
+Cypress.Commands.add('loginUI',()=>{
+    cy.clearAllCookies()
+    cy.clearLocalStorage()
+    cy.visit('/')
+    cy.get('[class="login-block"]').should('be.visible')
+    cy.get('[name="email"]').type(Cypress.env("username"))
+    cy.contains('button', 'Next').click({force:true})
+    cy.get('[name="password"]').type(Cypress.env("password"))
+    cy.contains('button', ' Login ').click({force:true})
+    cy.url().should('include', '/appointments')
+})
