@@ -18,5 +18,6 @@ import "cypress-xpath";
 import './commands'
 import './AdministrationCommands/companyInfoCommand'
 import './AdministrationCommands/locationCommand'
+import './AdministrationCommands/roomsCommand'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

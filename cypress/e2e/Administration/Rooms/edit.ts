@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
-describe("login, Delete - Locations", () => {
+describe("login, Edit Save Data - Rooms", () => {
     it("login as a user", () => {
         cy.loginUI()
     })
-
-    it("Delete Locations", () => {
+    it("Edit Save Rooms", () => {
         cy.visit('/administration')
-        cy.deleteLocationsData()
+        cy.editRoomsData()
     })
  
 })

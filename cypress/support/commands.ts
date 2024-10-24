@@ -1,5 +1,7 @@
 import loginPage from "../PageObjects/loginPage";
-const loginObject = new loginPage()
+const loginObject = new loginPage();
+import sharedPage from "../PageObjects/sharedPage";
+const sharedObject= new sharedPage()
 var randomNumber = Math.floor(Math.random() * 10000);
 
 Cypress.Commands.add('loginUI',()=>{
@@ -17,3 +19,12 @@ Cypress.Commands.add('loginUI',()=>{
     //   cy.log(a);
     // });
 })
+
+Cypress.Commands.add("waitForGenericLoader", () => {
+    cy.get(sharedObject.loader).should("not.be.visible");
+  });
+
+  Cypress.Commands.add("saveToast", () => {
+    cy.contains('Changes were saved successfully').as('saveToast').should('exist')
+    cy.contains('@saveToast').should('not.exist')
+  });

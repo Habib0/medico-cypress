@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe("login in, Field Validation, Save - Locations", () => {
+describe("login, Field Validation, Save - Locations", () => {
     it("login as a user", () => {
         cy.loginUI()
     })
