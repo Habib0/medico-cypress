@@ -19,5 +19,6 @@ import './commands'
 import './AdministrationCommands/companyInfoCommand'
 import './AdministrationCommands/locationCommand'
 import './AdministrationCommands/roomsCommand'
+import './patientsCommands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

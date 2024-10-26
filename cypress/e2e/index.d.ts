@@ -19,5 +19,11 @@ declare namespace Cypress {
          saveRoomsData()
          editRoomsData()
          deleteRoomsData()
+
+         // patients data
+         fieldValidationPatientData()
+         savePatients()
+         editPatient()
+         deletePatient()
     }
 }

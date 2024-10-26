@@ -32,7 +32,9 @@ export default defineConfig({
       'cypress/e2e/Administration/Rooms/add.ts',
       'cypress/e2e/Administration/Rooms/edit.ts',
       'cypress/e2e/Administration/Rooms/delete.ts',
-
+      'cypress/e2e/Patients/add.ts',
+      'cypress/e2e/Patients/edit.ts',
+      'cypress/e2e/Patients/delete.ts'
     ]
     }
 })
