@@ -25,6 +25,9 @@ export default defineConfig({
     testIsolation:false,
     baseUrl: 'https://medicophysicians-f0d5b2gzdkeafdbc.westus-01.azurewebsites.net/',
     specPattern: [
+      'cypress/e2e/Patients/add.ts',
+      'cypress/e2e/Patients/edit.ts',
+      'cypress/e2e/Patients/delete.ts',
       'cypress/e2e/Administration/Company Info/add.ts',
       'cypress/e2e/Administration/Location/add.ts',
       'cypress/e2e/Administration/Location/edit.ts',
@@ -32,9 +35,7 @@ export default defineConfig({
       'cypress/e2e/Administration/Rooms/add.ts',
       'cypress/e2e/Administration/Rooms/edit.ts',
       'cypress/e2e/Administration/Rooms/delete.ts',
-      'cypress/e2e/Patients/add.ts',
-      'cypress/e2e/Patients/edit.ts',
-      'cypress/e2e/Patients/delete.ts'
+   
     ]
     }
 })

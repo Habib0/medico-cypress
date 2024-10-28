@@ -5,8 +5,8 @@ const sharedObject= new sharedPage()
 var randomNumber = Math.floor(Math.random() * 10000);
 
 Cypress.Commands.add('loginUI',()=>{
-    // cy.clearAllCookies()
-    // cy.clearLocalStorage()
+    cy.clearAllCookies()
+    cy.clearLocalStorage()
     cy.visit('/')
     cy.get(loginObject.loginForm).should('be.visible')
     cy.get(loginObject.email).type(Cypress.env("username"))
