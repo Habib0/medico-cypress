@@ -4,6 +4,7 @@ declare namespace Cypress {
         loginUI()
         waitForGenericLoader()
         saveToast()
+        companySelect()
         // Administration data
         //company info data
         companyInfoCMD()
@@ -20,10 +21,33 @@ declare namespace Cypress {
          editRoomsData()
          deleteRoomsData()
 
+         // permssion role data
+         saveRolePermissions()
+         fieldValidationRolePermissions()
+         editRolePermissions()
+
+         // employee data
+         fieldValidationEmployeeData()
+         saveEmployee()
+         editEmployee()
+         deleteEmployee()
+         
          // patients data
          fieldValidationPatientData()
          savePatients()
          editPatient()
          deletePatient()
+
+        // Insurance data
+        fieldValidationInsuranceData()
+        saveInsuranceData()
+        editInsuranceData()
+        deleteInsuranceData()
+
+         // Companies Data
+         fieldValidationCompaniesData()
+         saveCompanies()
+         editCompanies()
+         deleteCompanies()
     }
 }

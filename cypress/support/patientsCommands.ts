@@ -34,9 +34,10 @@ Cypress.Commands.add('savePatients',()=>{
 
 })
 Cypress.Commands.add('editPatient',()=>{
-    // cy.waitForGenericLoader()
-    // cy.get(patientObject.gridSearch).clear().type('serge')
     cy.waitForGenericLoader()
+    cy.get(patientObject.gridSearch).clear().type('serge')
+    cy.waitForGenericLoader()
+    cy.wait(2000)
     cy.get(patientObject.btnEdit).eq(0).click({force:true})
     cy.get('[class="dx-overlay-content dx-popup-normal dx-popup-draggable dx-resizable"]').should('be.visible')
     cy.get(patientObject.firstName).clear().type('doom')
@@ -46,8 +47,10 @@ Cypress.Commands.add('editPatient',()=>{
 })
 
 Cypress.Commands.add('deletePatient',()=>{
-    // cy.get(patientObject.gridSearch).clear().type('serge')
     cy.waitForGenericLoader()
+    cy.get(patientObject.gridSearch).clear().type('serge')
+    cy.waitForGenericLoader()
+    cy.wait(2000)
     cy.get(patientObject.btnDelete).eq(0).click({force:true})
     cy.xpath(patientObject.confirmationPopup).should('be.visible')
     cy.get(patientObject.btnYes).click({force:true})

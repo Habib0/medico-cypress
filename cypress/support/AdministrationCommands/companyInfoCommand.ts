@@ -2,9 +2,11 @@ import companyInfoPage from "../../PageObjects/AdministrationPages/companyInfoPa
 const compnayInfoObject = new companyInfoPage();
 
 Cypress.Commands.add('companyInfoCMD',()=>{
+    cy.waitForGenericLoader()
+    cy.companySelect()
     cy.intercept('api/companies/*').as('getCompaniesData')
     cy.xpath(compnayInfoObject.clickCompanyInfoTab).click({force:true})
-    cy.wait('@getCompaniesData')
+    // cy.wait('@getCompaniesData')
     cy.xpath(compnayInfoObject.clickStateDD).click({force:true})
     cy.get(compnayInfoObject.itemList).find(compnayInfoObject.findStateDiv).as('getDdList')
     .contains('Arizona').click({force:true})

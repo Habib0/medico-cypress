@@ -7,7 +7,7 @@ var randomNumber = Math.floor(Math.random() * 10000);
 Cypress.Commands.add('loginUI',()=>{
     cy.clearAllCookies()
     cy.clearLocalStorage()
-    cy.visit('/')
+    cy.visit('/', {timeout:80000})
     cy.get(loginObject.loginForm).should('be.visible')
     cy.get(loginObject.email).type(Cypress.env("username"))
     cy.contains('button', 'Next').click({force:true})
@@ -27,4 +27,9 @@ Cypress.Commands.add("waitForGenericLoader", () => {
   Cypress.Commands.add("saveToast", () => {
     cy.contains('Changes were saved successfully').as('saveToast').should('exist')
     cy.contains('@saveToast').should('not.exist')
+  });
+
+  Cypress.Commands.add("companySelect", () => {
+    cy.xpath('//li[@class="md-company-switcher"]//div[@class="dx-dropdowneditor-icon"]').click({force:true})
+    cy.xpath('//div[@class="dx-item-content dx-list-item-content" and text()="itbytes"]').eq(0).click({force:true}).wait(5000)
   });

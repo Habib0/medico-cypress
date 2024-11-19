@@ -6,7 +6,7 @@ class loginPage{
     constructor(){
         this.email='[name="email"]'
         this.password='[name="password"]'
-        this.loginForm='[class="login-block"]'
+        this.loginForm='.login-block'
     }
 }
 

@@ -15,8 +15,18 @@ class sharedPage{
         gridSearch:string
         loader:string;
         confirmationPopup:string
-        clickActive:string
+        clickActive:string;
+        clickMenuCompanies:string
+        btnRefresh:string;
+        clickAdministrationMenu:string
+        clickEmployeeTab:string
+        clickTemplateTab:string
     constructor(){
+        this.clickTemplateTab='//li[@aria-label="Templates"]//div[@class="dx-item-content dx-treeview-item-content"]//span[text()="Templates"]'
+        this.clickEmployeeTab='//span[@class="dx-tab-text-span-pseudo" and contains(text(), "Employees")]'
+        this.clickAdministrationMenu='[href="/administration"]'
+        this.btnRefresh='[aria-label="Refresh"]'
+        this.clickMenuCompanies='[href="/companies-management"]'
         this.clickActive='[aria-label="OFF"]'
         this.confirmationPopup='//div[@class="dx-item-content dx-toolbar-item-content"]//div[text()="Confirmation"]'
         this.loader = '[class="dx-loadpanel-content-wrapper"]';
