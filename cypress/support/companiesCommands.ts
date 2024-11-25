@@ -1,7 +1,7 @@
 import companiesPage from "../PageObjects/companiesPage";
 const companyObject =new companiesPage()
 
-
+var randomNumber = Math.floor(Math.random() * 10000);
 Cypress.Commands.add("fieldValidationCompaniesData",()=>{
     cy.waitForGenericLoader()
     cy.get(companyObject.clickMenuCompanies).click({force:true})
@@ -11,15 +11,15 @@ Cypress.Commands.add("fieldValidationCompaniesData",()=>{
     cy.get('[class="dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-validator dx-visibility-change-handler dx-invalid"').should('be.visible')
 })
 Cypress.Commands.add('saveCompanies',()=>{
-    cy.get(companyObject.nameInput).type('itbytes')
+    cy.get(companyObject.nameInput).type('itbytes ' + randomNumber)
     cy.xpath(companyObject.phoneInput).eq(0).type('8940545447')
     cy.get(companyObject.primaryAddressInput).type('street no 2, london')
     cy.get(companyObject.cityInput).type('london')
     cy.get(companyObject.zipInput).type('43533')
-    cy.xpath('//input[@name="fax"]//parent::div//input[@type="text"]').type('3424342088')
-    cy.xpath(companyObject.clickState).click({force:true})
-    cy.xpath('//div[@class="dx-item-content dx-list-item-content" and text()="Texas"]').click({force:true})
-    cy.xpath('//span[@class="dx-field-item-label-text" and text()="Service Type"]').click({force:true})
+    cy.xpath('//input[@name="fax"]//parent::div//input[@type="text"]').type('3424342088').wait(1000)
+    cy.xpath(companyObject.clickState).click({force:true}).wait(1500)
+    cy.xpath('//div[@class="dx-item-content dx-list-item-content" and text()="Alaska"]').should('have.text', 'Alaska').eq(0).click({force:true}).wait(1500)
+    cy.xpath('//span[@class="dx-field-item-label-text" and text()="Service Type"]').click({force:true}).wait(1500)
     cy.contains('div', 'Private Practice').click({force:true})
     cy.get('[name="firstname"]').type('awais')
     cy.get('[name="lastname"]').type('admin')
