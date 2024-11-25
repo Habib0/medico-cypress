@@ -24,5 +24,7 @@ import './companiesCommands'
 import './AdministrationCommands/permissionsCommands'
 import './AdministrationCommands/employeeCommands'
 import './AdministrationCommands/insuranceCompaniesCommands'
+import './AdministrationCommands/templateSelectableListcategoriesCommands'
+import './AdministrationCommands/templateSelectableListCommands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

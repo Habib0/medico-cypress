@@ -1,6 +1,6 @@
 import employeePage from "../../PageObjects/AdministrationPages/employeePage"
 const employeeObject = new employeePage()
-
+var randomNumber = Math.floor(Math.random() * 10000);
 Cypress.Commands.add("fieldValidationEmployeeData",()=>{
     cy.waitForGenericLoader()
     // cy.get(employeeObject.clickAdministrationMenu).click({force:true})
@@ -15,7 +15,7 @@ Cypress.Commands.add("fieldValidationEmployeeData",()=>{
     cy.get('[class="dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-validator dx-visibility-change-handler dx-invalid"').should('be.visible')
 })
 Cypress.Commands.add('saveEmployee',()=>{
-    cy.get(employeeObject.firstName).type('peter')
+    cy.get(employeeObject.firstName).type('peter ' + randomNumber)
     cy.get(employeeObject.middleName).type('m')
     cy.get(employeeObject.lastName).type('serge')
     cy.get(employeeObject.emailInput).type('johndoe123@gmail.com')
@@ -50,7 +50,7 @@ Cypress.Commands.add('editEmployee',()=>{
     cy.waitForGenericLoader()
     cy.wait(2000)
     cy.get(employeeObject.btnEdit).eq(0).click({force:true})
-    cy.get(employeeObject.firstName).should('be.visible').clear().type('doom')
+    cy.get(employeeObject.firstName).should('be.visible').clear().type('doom ' + randomNumber)
     cy.get(employeeObject.saveAndClose).click({force:true})
 })
 

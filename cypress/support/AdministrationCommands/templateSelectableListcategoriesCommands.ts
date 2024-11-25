@@ -1,0 +1,51 @@
+import TemplatePage from "../../PageObjects/AdministrationPages/TemplatePage";
+const templateObject = new TemplatePage()
+var randomNumber = Math.floor(Math.random() * 10000);
+
+Cypress.Commands.add("fieldValidationSelectableListCategories",()=>{
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickTemplateTab).click({force:true})
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickSelectableListCategoriesTab).click({force:true})
+    cy.xpath(templateObject.clickNewBtnCategory).should('be.visible').click({force:true})
+    // cy.get('[class="dx-overlay-content dx-popup-normal dx-resizable dx-popup-flex-height"]').should('be.visible')
+    cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+    cy.xpath('//div[@class="dx-overlay-content dx-invalid-message-content" and text()="Title is required"]').should('be.visible')})
+Cypress.Commands.add("saveSelectableListCategories",()=>{
+    // cy.task("getCache", "randomNumber").then((a: any) => {
+        cy.wait(2000)
+        cy.get(templateObject.titleInput).type('Automated Category List ' + randomNumber)
+        cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+        // cy.saveToast()
+        cy.intercept('api/selectable-list-categories/dx/grid*').as('getGridList')
+        cy.get(templateObject.closeBtn).click({force:true})
+        cy.wait('@getGridList')
+    // })
+})
+
+Cypress.Commands.add('editSaveSelectableListCategories',()=>{
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickTemplateTab).click({force:true})
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickSelectableListCategoriesTab).click({force:true})
+    cy.get(templateObject.gridSearch).clear().type('Automated Category List')
+    cy.waitForGenericLoader()
+    cy.wait(3000)
+    cy.get(templateObject.btnEdit).eq(0).click({force:true})
+    // cy.get(templateObject.addPopupVisible).should('be.visible')
+    cy.get(templateObject.titleInput).clear().type('Edit Automated Category '+ randomNumber)
+    cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+})
+Cypress.Commands.add('deleteSelectableListCategories',()=>{
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickTemplateTab).click({force:true})
+    cy.waitForGenericLoader()
+    cy.xpath(templateObject.clickSelectableListCategoriesTab).click({force:true})
+    cy.get(templateObject.gridSearch).clear().type('Automated Category')
+    cy.waitForGenericLoader()
+    cy.wait(3000)
+    cy.get(templateObject.btnDelete).eq(0).click({force:true})
+    cy.xpath(templateObject.confirmationPopup).should('be.visible')
+    cy.get(templateObject.btnYes).click({force:true})
+    cy.waitForGenericLoader()
+})

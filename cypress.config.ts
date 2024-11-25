@@ -23,6 +23,7 @@ export default defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     testIsolation:false,
+    experimentalRunAllSpecs:false,
     baseUrl: 'https://medicophysicians-f0d5b2gzdkeafdbc.westus-01.azurewebsites.net/',
     specPattern: [
       'cypress/e2e/Patients/add.ts',
@@ -41,6 +42,12 @@ export default defineConfig({
       'cypress/e2e/Administration/Insurance Companies/add.ts',
       'cypress/e2e/Administration/Insurance Companies/edit.ts',
       'cypress/e2e/Administration/Insurance Companies/delete.ts',
+      'cypress/e2e/Administration/Templates/Selectable List Categories/add.ts',
+      'cypress/e2e/Administration/Templates/Selectable List Categories/edit.ts',
+      'cypress/e2e/Administration/Templates/Selectable List Categories/delete.ts',
+      'cypress/e2e/Administration/Templates/Selectable Lists/add.ts',
+      'cypress/e2e/Administration/Templates/Selectable Lists/edit.ts',
+      'cypress/e2e/Administration/Templates/Selectable Lists/delete.ts',
       'cypress/e2e/Companies/add.ts',
       'cypress/e2e/Companies/edit.ts',
       'cypress/e2e/Companies/delete.ts',

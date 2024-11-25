@@ -13,7 +13,7 @@ Cypress.Commands.add('loginUI',()=>{
     cy.contains('button', 'Next').click({force:true})
     cy.get(loginObject.password).type(Cypress.env("password"))
     cy.contains('button', ' Login ').click({force:true})
-    cy.url().should('include', '/appointments')
+    cy.get(loginObject.homePageVisible).should('be.visible')
     // cy.task("putInCache", { key: "randomNumber", data: randomNumber });
     // cy.task("getCache", "randomNumber").then((a: any) => {
     //   cy.log(a);

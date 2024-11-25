@@ -5,6 +5,19 @@ declare namespace Cypress {
         waitForGenericLoader()
         saveToast()
         companySelect()
+
+        // Companies Data
+        fieldValidationCompaniesData()
+        saveCompanies()
+        editCompanies()
+        deleteCompanies()
+
+        // patients data
+        fieldValidationPatientData()
+        savePatients()
+        editPatient()
+        deletePatient()
+
         // Administration data
         //company info data
         companyInfoCMD()
@@ -32,22 +45,24 @@ declare namespace Cypress {
          editEmployee()
          deleteEmployee()
          
-         // patients data
-         fieldValidationPatientData()
-         savePatients()
-         editPatient()
-         deletePatient()
-
         // Insurance data
         fieldValidationInsuranceData()
         saveInsuranceData()
         editInsuranceData()
         deleteInsuranceData()
 
-         // Companies Data
-         fieldValidationCompaniesData()
-         saveCompanies()
-         editCompanies()
-         deleteCompanies()
+        // Template Data
+
+        // Template selectable List category
+        fieldValidationSelectableListCategories()
+        saveSelectableListCategories()
+        editSaveSelectableListCategories()
+        deleteSelectableListCategories()
+
+         // Template selectable List
+         fieldValidationSelectableList()
+         saveSelectableList()
+         editSaveSelectableList()
+         deleteSelectableList()
     }
 }
