@@ -34,6 +34,24 @@ declare namespace Cypress {
          editRoomsData()
          deleteRoomsData()
 
+         //Lab Test Data
+         fieldValidationLabTest()
+         saveLabTest()
+         editLabTest()
+         deleteLabTest()
+
+        // vendors data
+        fieldValidationVendors()
+        saveVendors()
+        editVendors()
+        deleteVendors()
+
+        // appointment type data
+        fieldValidationAppointmentType()
+        saveAppointmentType()
+        editAppointmentType()
+        deleteAppointmentType()
+
          // permssion role data
          saveRolePermissions()
          fieldValidationRolePermissions()
@@ -64,5 +82,11 @@ declare namespace Cypress {
          saveSelectableList()
          editSaveSelectableList()
          deleteSelectableList()
+
+         // Template Types
+         fieldValidationTemplateType()
+         saveTemplateType()
+         editSaveTemplateType()
+         deleteTemplateType()
     }
 }

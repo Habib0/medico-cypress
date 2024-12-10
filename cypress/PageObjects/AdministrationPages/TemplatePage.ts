@@ -7,9 +7,11 @@ class TemplatePage extends sharedPage{
         clickNewBtnCategory:string
         titleInput:string
         clickNewBtnList:string
-        clickCategroyList:string
+        clickCategroyList:string;
+        clickNewTemplateTypeBtn:string
     constructor(){
     super()
+        this.clickNewTemplateTypeBtn='//button[@type="button" and text()=" New Type "]'
         this.clickCategroyList='//input[@name="categoryId"]//parent::div//div[@class="dx-button-content"]'
         this.titleInput='[name="title"]'
         this.clickNewBtnList='//button[@type="button" and text()=" New List "]'

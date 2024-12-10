@@ -20,8 +20,20 @@ class sharedPage{
         btnRefresh:string;
         clickAdministrationMenu:string
         clickEmployeeTab:string
-        clickTemplateTab:string
+        clickTemplateTab:string;
+        clickLabtestTab:string;
+        clickVendorTab:string
+        clickAppointmentTab:string
+        clickAddAppointmentBtn:string
+        nameInput:string
+        clickLibraryTab:string
     constructor(){
+        this.clickLibraryTab='[class="bx bx-book"]'
+        this.nameInput='[name="value"]'
+        this.clickAddAppointmentBtn='//button[@type="button" and text()=" New Type "]'
+        this.clickAppointmentTab='//li[@aria-label="Appointment Types"]//div//span'
+        this.clickVendorTab='//li[@aria-label="Vendors"]//div//span'
+        this.clickLabtestTab='//li[@aria-label="Lab Tests"]//div[@class="dx-item-content dx-treeview-item-content"]//span'
         this.clickTemplateTab='//li[@aria-label="Templates"]//div[@class="dx-item-content dx-treeview-item-content"]//span[text()="Templates"]'
         this.clickEmployeeTab='//span[@class="dx-tab-text-span-pseudo" and contains(text(), "Employees")]'
         this.clickAdministrationMenu='[href="/administration"]'

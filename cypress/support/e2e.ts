@@ -26,5 +26,13 @@ import './AdministrationCommands/employeeCommands'
 import './AdministrationCommands/insuranceCompaniesCommands'
 import './AdministrationCommands/templateSelectableListcategoriesCommands'
 import './AdministrationCommands/templateSelectableListCommands'
+import './AdministrationCommands/templateTypeCommands'
+import './AdministrationCommands/labTestCommands'
+import './AdministrationCommands/vendorsCommands'
+import './AdministrationCommands/appointmentTypeCommands'
+import './LibraryCommands/templateTypesCommands'
+import './LibraryCommands/selectableListCategoriesCommands'
+import './LibraryCommands/selectableListCommands'
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
