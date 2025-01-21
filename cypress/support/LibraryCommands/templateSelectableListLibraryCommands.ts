@@ -1,0 +1,51 @@
+import TemplatePage from "../../PageObjects/AdministrationPages/TemplatePage";
+const templateObject = new TemplatePage()
+var randomNumber = Math.floor(Math.random() * 10000);
+
+Cypress.Commands.add("fieldValidationSelectableListLibrary",()=>{
+    cy.waitForGenericLoader()
+    cy.xpath('//li[@aria-label="Selectable Lists"]//span[text()="Selectable Lists"]').click({force:true})
+    cy.xpath('//button[@type="button" and text()=" New Record "]').should('be.visible').click({force:true})
+    // cy.get('[class="dx-overlay-content dx-popup-normal dx-resizable dx-popup-flex-height"]').should('be.visible')
+    cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+    cy.get('[class="dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-validator dx-visibility-change-handler dx-invalid"]').should('be.visible')})
+Cypress.Commands.add("saveSelectableListLibrary",()=>{
+    // cy.task("getCache", "randomNumber").then((a: any) => {
+        cy.wait(2000)
+        cy.get(templateObject.titleInput).type('Automated library selectable List ' + randomNumber)
+        cy.xpath(templateObject.clickCategroyList).click({force:true})
+        cy.xpath('//div[@class="dx-item-content dx-list-item-content" and contains(text(), "automation category")]').eq(0).click({force:true})
+        cy.get('[title="Add a row"]').click({force:true})
+        cy.xpath('//tr[@class="dx-row dx-data-row dx-row-lines dx-row-inserted dx-edit-row"]//input[@type="text"]')
+        .eq(0).type('normal range')
+        cy.get('[class="dx-widget dx-checkbox dx-datagrid-checkbox-size"]').eq(0).click({force:true})
+        cy.xpath('//a[@class="dx-link dx-link-save" and text()="Save"]').click({force:true}).wait(1000)
+        cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+        // cy.saveToast()
+        cy.intercept('api/library-selectable-lists/dx/grid*').as('getGridList')
+        cy.get(templateObject.closeBtn).click({force:true})
+        cy.wait('@getGridList')
+    // })
+})
+
+Cypress.Commands.add('editSaveSelectableListLibrary',()=>{
+    cy.waitForGenericLoader()
+    cy.xpath('//li[@aria-label="Selectable Lists"]//span[text()="Selectable Lists"]').click({force:true})
+    cy.get(templateObject.gridSearch).clear().type('Automated library selectable List')
+    cy.waitForGenericLoader()
+    cy.wait(3000)
+    cy.get(templateObject.btnEdit).eq(0).click({force:true})
+    // cy.get(templateObject.addPopupVisible).should('be.visible')
+    cy.get(templateObject.titleInput).clear().type('Edit Automated selectable List '+ randomNumber)
+    cy.xpath('//button[@class="btn btn-md btn-outline-secondary" and text()=" Save "]').click({force:true})
+})
+Cypress.Commands.add('deleteSelectableListLibrary',()=>{
+    cy.waitForGenericLoader()
+    cy.xpath('//li[@aria-label="Selectable Lists"]//span[text()="Selectable Lists"]').click({force:true})
+    cy.get(templateObject.gridSearch).clear().type('Automated library selectable List')
+    cy.waitForGenericLoader()
+    cy.get(templateObject.btnDelete).eq(0).click({force:true})
+    cy.xpath(templateObject.confirmationPopup).should('be.visible')
+    cy.get(templateObject.btnYes).click({force:true})
+    cy.waitForGenericLoader()
+})

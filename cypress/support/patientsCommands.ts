@@ -56,3 +56,13 @@ Cypress.Commands.add('deletePatient',()=>{
     cy.get(patientObject.btnYes).click({force:true})
     cy.waitForGenericLoader()
 })
+
+Cypress.Commands.add('viewPatient',()=>{
+    cy.waitForGenericLoader()
+    cy.get(patientObject.gridSearch).clear().type('serge')
+    cy.waitForGenericLoader()
+    cy.wait(2000)
+    cy.get(patientObject.view).eq(0).click({force:true})
+    cy.xpath('//span[text()="Patient Info"]').should('be.visible')
+    cy.get(patientObject.closeBtn).click({force:true})
+})

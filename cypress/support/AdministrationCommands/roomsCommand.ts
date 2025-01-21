@@ -16,7 +16,7 @@ Cypress.Commands.add("saveRoomsData",()=>{
         cy.get(roomObject.nameInput).type('Automated Room ' + randomNumber)
         cy.xpath(roomObject.clickLocationType).click({force:true}).wait(1000)
         // cy.waitForGenericLoader()
-        cy.xpath('//div[@aria-label="Items"]//div[@class="dx-item-content dx-list-item-content" and text()="Glendale"]').should('be.visible').click({force:true})
+        cy.get('[aria-label="Items"]').find('[class="dx-item dx-list-item"]').first().should('be.visible').click({force:true})
         cy.get(roomObject.clickActive).click({force:true})
         cy.intercept('api/room/*').as('saveData')
         cy.get(roomObject.save).click({force:true})

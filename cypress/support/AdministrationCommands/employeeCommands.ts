@@ -21,8 +21,8 @@ Cypress.Commands.add('saveEmployee',()=>{
     cy.get(employeeObject.emailInput).type('johndoe123@gmail.com')
     cy.xpath(employeeObject.primaryPhone).type('8940545447')
     cy.xpath(employeeObject.secondryPhone).type('9234354545')
-    cy.xpath(employeeObject.clickDob).click({force:true})
-    cy.get('.dx-calendar-cell.dx-calendar-today').click({force:true})
+    // cy.xpath(employeeObject.clickDob).click({force:true})
+    cy.get('[placeholder="MM/DD/YYYY"]').type('01/01/1990')
     cy.xpath(employeeObject.clickGender).click({force:true})
     cy.xpath('//div[@class="dx-item-content dx-list-item-content" and text()="Male"]').click({force:true})
     // cy.xpath(employeeObject.clickMaritalStatus).click({force:true})
@@ -40,6 +40,7 @@ Cypress.Commands.add('saveEmployee',()=>{
     cy.get('[name="password"]').type('Employee@Password')
     cy.get('[name="passwordCopy"]').type('Employee@Password')
     cy.get(employeeObject.saveAndClose).click({force:true})
+    cy.saveToaster()
 
 })
 Cypress.Commands.add('editEmployee',()=>{

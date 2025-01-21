@@ -13,5 +13,6 @@ Cypress.Commands.add('companyInfoCMD',()=>{
     cy.xpath(compnayInfoObject.clickServiceType).click({force:true})
     cy.get('@getDdList').contains('Private Practice').click({force:true})
     cy.xpath(compnayInfoObject.saveBtn).click({force:true})
-    cy.contains('Changes were saved successfully').should('not.exist')
+    cy.saveToast()
+    // cy.contains('Changes were saved successfully').should('not.exist')
 })

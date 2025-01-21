@@ -33,3 +33,7 @@ Cypress.Commands.add("waitForGenericLoader", () => {
     cy.xpath('//li[@class="md-company-switcher"]//div[@class="dx-dropdowneditor-icon"]').click({force:true})
     cy.xpath('//div[@class="dx-item-content dx-list-item-content" and text()="itbytes"]').eq(0).click({force:true}).wait(5000)
   });
+
+  Cypress.Commands.add("saveToaster", () => {
+    cy.get(sharedObject.saveChangesSuccesToaster).should('be.visible')
+    })

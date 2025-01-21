@@ -26,8 +26,14 @@ class sharedPage{
         clickAppointmentTab:string
         clickAddAppointmentBtn:string
         nameInput:string
-        clickLibraryTab:string
+        clickLibraryTab:string;
+        view:string;
+        saveChangesSuccesToaster:string;
+        viewCompanyinfo:string;
     constructor(){
+        this.viewCompanyinfo='[title="Company Info"]'
+        this.saveChangesSuccesToaster = '.dx-toast-message:contains("Changes were saved successfully.")'
+        this.view='[title="View"]'
         this.clickLibraryTab='[class="bx bx-book"]'
         this.nameInput='[name="value"]'
         this.clickAddAppointmentBtn='//button[@type="button" and text()=" New Type "]'

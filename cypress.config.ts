@@ -28,7 +28,9 @@ export default defineConfig({
     specPattern: [
       'cypress/e2e/Patients/add.ts',
       'cypress/e2e/Patients/edit.ts',
+      'cypress/e2e/Patients/view.ts',
       'cypress/e2e/Patients/delete.ts',
+      'cypress/e2e/Administration/Company Info/companyInfo/add.ts',
       'cypress/e2e/Administration/Company Info/Location/add.ts',
       'cypress/e2e/Administration/Company Info/Location/edit.ts',
       'cypress/e2e/Administration/Company Info/Location/delete.ts',
@@ -62,7 +64,17 @@ export default defineConfig({
       'cypress/e2e/Administration/Appointment Type/delete.ts',
       'cypress/e2e/Companies/add.ts',
       'cypress/e2e/Companies/edit.ts',
+      'cypress/e2e/Companies/view.ts',
       'cypress/e2e/Companies/delete.ts',
+      'cypress/e2e/Library/Selectable Categories/add.ts',
+      'cypress/e2e/Library/Selectable Categories/edit.ts',
+      'cypress/e2e/Library/Selectable Categories/delete.ts',
+      'cypress/e2e/Library/Template Type/add.ts',
+      'cypress/e2e/Library/Template Type/edit.ts',
+      'cypress/e2e/Library/Template Type/delete.ts',
+      'cypress/e2e/Library/Selectable Lists/add.ts',
+      'cypress/e2e/Library/Selectable Lists/edit.ts',
+      'cypress/e2e/Library/Selectable Lists/delete.ts',
     ]
     }
 })

@@ -5,17 +5,20 @@ declare namespace Cypress {
         waitForGenericLoader()
         saveToast()
         companySelect()
+        saveToaster()
 
         // Companies Data
         fieldValidationCompaniesData()
         saveCompanies()
         editCompanies()
+        viewCompanyInfo()
         deleteCompanies()
 
         // patients data
         fieldValidationPatientData()
         savePatients()
         editPatient()
+        viewPatient()
         deletePatient()
 
         // Administration data
@@ -88,5 +91,35 @@ declare namespace Cypress {
          saveTemplateType()
          editSaveTemplateType()
          deleteTemplateType()
+
+          // Phrases
+          fieldValidationPhrases()
+          savePhrases()
+          editSavePhrases()
+          deletePhrases()
+
+        // selectable category libray data
+        fieldValidationSelectableCategoriesLibrary()
+        saveSelectableCategoriesLibrary()
+        editSelectableCategoriesLibrary()
+        deleteSelectableCategoriesLibrary()
+
+          // Template Types libray
+          fieldValidationTemplateTypeLibrary()
+          saveTemplateTypeLibrary()
+          editSaveTemplateTypeLibrary()
+          deleteTemplateTypeLibrary()
+
+        // template selectable list librar
+        fieldValidationSelectableListLibrary()
+        saveSelectableListLibrary()
+        editSaveSelectableListLibrary()
+        deleteSelectableListLibrary()
+
+        // patient orders data
+        fieldValidationPatientOrders()
+        savePatientOrders()
+        editSavePatientOrders()
+        deletePatientOrders()
     }
 }
