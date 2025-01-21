@@ -3,8 +3,8 @@ const patientObject = new patientPage()
 Cypress.Commands.add("fieldValidationPatientData",()=>{
     cy.waitForGenericLoader()
     cy.xpath(patientObject.clickAddNewPatientBtn).should('be.visible').click({force:true})
-    cy.get('[class="dx-overlay-content dx-popup-normal dx-popup-draggable dx-resizable"]').should('be.visible')
-    cy.get(patientObject.saveAndClose).click({force:true})
+    // cy.get('[class="dx-overlay-content dx-popup-normal dx-popup-draggable dx-resizable"]').should('be.visible')
+    cy.get(patientObject.saveAndClose).should('be.visible').click({force:true})
     cy.get('[class="dx-show-invalid-badge dx-textbox dx-texteditor dx-editor-outlined dx-texteditor-empty dx-widget dx-validator dx-visibility-change-handler dx-invalid"').should('be.visible')
 })
 Cypress.Commands.add('savePatients',()=>{

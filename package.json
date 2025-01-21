@@ -6,7 +6,8 @@
 
   "scripts": {
     "scripts": "cypress run",
-    "test": "npx cypress run --config-file=cypress.config.ts --headless"
+    "test": "npx cypress run --config-file=cypress.config.ts --headless",
+    "cyp": "npx cypress run --headed --browser chrome"
   },
   "keywords": [],
   "author": "",
