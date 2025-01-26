@@ -121,5 +121,9 @@ declare namespace Cypress {
         savePatientOrders()
         editSavePatientOrders()
         deletePatientOrders()
+
+        // business hour data
+        fieldValidationBusinessHour()
+        saveBusinessHour()
     }
 }

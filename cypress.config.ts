@@ -62,6 +62,7 @@ export default defineConfig({
       'cypress/e2e/Administration/Appointment Type/add.ts',
       'cypress/e2e/Administration/Appointment Type/edit.ts',
       'cypress/e2e/Administration/Appointment Type/delete.ts',
+      'cypress/e2e/Administration/Business Hours/add.ts',
       'cypress/e2e/Companies/add.ts',
       'cypress/e2e/Companies/edit.ts',
       'cypress/e2e/Companies/view.ts',
@@ -75,6 +76,9 @@ export default defineConfig({
       'cypress/e2e/Library/Selectable Lists/add.ts',
       'cypress/e2e/Library/Selectable Lists/edit.ts',
       'cypress/e2e/Library/Selectable Lists/delete.ts',
+      'cypress/e2e/Misc/Patient Orders/add.ts',
+      'cypress/e2e/Misc/Patient Orders/edit.ts',
+      'cypress/e2e/Misc/Patient Orders/delete.ts',
     ]
     }
 })

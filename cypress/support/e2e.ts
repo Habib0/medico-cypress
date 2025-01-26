@@ -36,5 +36,6 @@ import './LibraryCommands/selectableListCommands'
 import './LibraryCommands/templateSelectableListLibraryCommands'
 import './Misc/patientOrdersCommands'
 import './AdministrationCommands/phrasesCommands'
+import './AdministrationCommands/buisnessHourCommands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

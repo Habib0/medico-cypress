@@ -30,7 +30,11 @@ class sharedPage{
         view:string;
         saveChangesSuccesToaster:string;
         viewCompanyinfo:string;
+        businessHourTab:string;
+        btnOk:string;
     constructor(){
+        this.btnOk='[aria-label="OK"]'
+        this.businessHourTab='//li[@aria-label="Business Hours"]//div//span'
         this.viewCompanyinfo='[title="Company Info"]'
         this.saveChangesSuccesToaster = '.dx-toast-message:contains("Changes were saved successfully.")'
         this.view='[title="View"]'
